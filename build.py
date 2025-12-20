@@ -27,12 +27,19 @@ def main():
     py_cmd = sys.executable
     make_cmd = "make clean" if args.clean else "make"
 
-    if args.skipfs == False or args.onlyfs:      
-        run(
-            f'\"{py_cmd}\" tool/hConv.py filesystem src/filesystem '
-            '--priority error_screens/Error_IPL.yaz0 '
-            '--extensions zmap,zscene,zroom,bin,yaz0,tbl'
-        )
+    if args.skipfs == False or args.onlyfs:  
+        if args.version == "JPN":
+            run(
+                f'\"{py_cmd}\" tool/hConv.py filesystem src/filesystem '
+                '--priority error_screens/Error_IPL.yaz0 '
+                '--extensions zmap,zscene,zroom,bin,yaz0,tbl'
+            )
+        else:
+            run(
+                f'\"{py_cmd}\" tool/hConv.py filesystem src/filesystem '
+                '--priority error_screens/Error_IPL2.yaz0 '
+                '--extensions zmap,zscene,zroom,bin,yaz0,tbl'
+            )        
 
         if args.onlyfs:
             return
