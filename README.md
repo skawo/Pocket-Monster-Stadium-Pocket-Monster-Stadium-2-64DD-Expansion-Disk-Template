@@ -4,7 +4,7 @@ A C template for making Pocket Monsters' Stadium 1/2 64DD Expansion Disks.
 These games don't do anything except for rebooting the game into new code - this template only serves to provide the barest example of the functionality being used and displays a full-screen image.
 
 # Building
-Requires Python 3 and make.
+Requires WSL2, Python 3 and make.
 
 1. Extract the toolchain archives found in tool/gcc.
 2. Run build.py found in the repository root.
